@@ -4,9 +4,19 @@ import customtkinter as ctk
 ctk.set_appearance_mode('dark')
 ctk.set_default_color_theme('blue')
 
+#funções-----------------------------
+
+def calcular():
+    d = int(distancia.get())
+    c = float(consumo.get())
+    p = float(preco.get())
+
+    formula = (d/c)*p
+    resultado.configure(text=f'O valor para a viagem é de R${formula:.2f}')
+
 # Janela
 janela = ctk.CTk()
-janela.geometry('400x500')
+janela.geometry('400x400')
 janela.resizable(False, False)
 janela.title('Sistema de Acesso - 2026')
 janela.iconbitmap('3668862-car-drive-expenses-service_108021.ico')
@@ -67,9 +77,16 @@ botao = ctk.CTkButton(
     border_color='#cc1212',
     hover_color='#cc1212',
     border_width=2,
-    font=('Verdana', 20)
+    font=('times new Roman', 20, 'bold'),
+    command=calcular
 )
-botao.pack(pady=20)
+botao.pack(pady=10)
+
+resultado = ctk.CTkLabel(janela,
+                      text='',
+                      text_color='white',
+                      font=('arial',20))
+resultado.pack(pady=10)
 
 
 
