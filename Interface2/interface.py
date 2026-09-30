@@ -37,8 +37,9 @@ TEXTO = '#4A3B40'
 janela = ctk.CTk()
 janela.geometry('600x450')
 janela.resizable(False, False)
-janela.title('Sistema Escola')
+janela.title('Sistema Escola 2026')
 janela.configure(fg_color=FUNDO)
+janela.iconbitmap('Interface2/3069198-cap-education-hat-school_112714.ico')
 
 titulo = ctk.CTkLabel(
     janela,
